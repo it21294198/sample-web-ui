@@ -1,0 +1,41 @@
+// $mainTextColor:blue;
+// $subTextColor:green;
+
+// .h11 {
+//   color: $mainTextColor;
+//   background: $mainTextColor;
+//   &:hover {
+//     color: $subTextColor;
+//   }
+// }
+
+// @mixin common-text {
+//   text-justify: auto;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+// }
+
+// .mainDiv {
+//   @include common-text();
+//   background: pink;
+// }
+
+// .subDiv {
+//   background: red;
+//   padding: 10px 20px 10px 20px;
+//   margin: random(10);
+// }
+
+// $small: 300px;
+// $medium: 900px;
+
+// .smth {
+//   //some CSS
+//   @media screen and (max-width: $small) {
+//     //do Smth
+//   }
+//   @media screen and (min-width: $medium) {
+//     //do Smth
+//   }
+// }

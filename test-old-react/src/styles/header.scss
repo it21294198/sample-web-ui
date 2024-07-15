@@ -74,6 +74,15 @@ nav ul li a {
     
 }
 
+.specialNavItem {
+    background: white;
+    border-radius: 5px;
+    &:hover {
+        border-radius: 3px;
+        padding: 2px;
+    }
+}
+
 @media (max-width: 431px) {
     nav ul.drawer-open {
         display: flex;
@@ -95,6 +104,10 @@ nav ul li a {
 
     nav ul {
         display: none;
+    }
+
+    .specialNavItem{
+        background: none;
     }
 
     .btn {

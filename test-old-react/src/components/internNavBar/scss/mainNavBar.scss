@@ -1,0 +1,25 @@
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.dynamicNavBar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dynamicNavBar .buttonContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .dynamicNavBar .separator {
+    margin: 0 5px; /* Adjust as needed */
+  }
+  
+  .dynamicNavBar .buttonContainer div {
+    cursor: pointer;
+  }
+  

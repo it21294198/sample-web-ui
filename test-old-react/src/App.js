@@ -2,6 +2,7 @@ import './App.scss';
 import './styles/test.scss'
 import NavBar from './components/navBar';
 import SearchBar from './components/searchBar';
+import ManiBar from './components/internNavBar/maniBar';
 // import {Buttons} from'./components/buttons'
 // import Three from './components/threeScene'
 
@@ -12,6 +13,7 @@ function App() {
       <header>
         <SearchBar />
         <NavBar />
+        <ManiBar />
       </header>
       {/* <h1 className='h11'>Hello</h1>
       <div className='mainDiv'>

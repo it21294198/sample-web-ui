@@ -5,7 +5,8 @@ import SearchBar from './components/searchBar';
 import ManiBar from './components/internNavBar/maniBar';
 import ExampleDev from './components/insideDev/exampleDev';
 // import {Buttons} from'./components/buttons'
-import ThreeScene from './components/threeScene'
+import ThreePotScene from './components/threePotScene'
+// import ThreeRoverScene from './components/threeRoverScene'
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
       </header>
       <main>
         {/* <ExampleDev /> */}
-        <ThreeScene />
+        <ThreePotScene />
+        {/* <ThreeRoverScene /> */}
       </main>
       {/* <h1 className='h11'>Hello</h1>
       <div className='mainDiv'>

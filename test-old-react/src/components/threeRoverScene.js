@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-class ThreeScene extends Component {
+class ThreeRoverScene extends Component {
   constructor(props) {
     super(props);
     this.roverModel = null;
@@ -11,6 +11,9 @@ class ThreeScene extends Component {
     this.moveBackward = false;
     this.camera = null;
     this.renderer = null;
+    this.raycaster = new THREE.Raycaster();
+    this.mouse = new THREE.Vector2();
+    this.pots = []; // Array to store all pots
   }
 
   componentDidMount() {
@@ -53,17 +56,9 @@ class ThreeScene extends Component {
     loader.load("rover.glb", (gltf) => {
       this.roverModel = gltf.scene;
       this.roverModel.position.set(0, 0, 0);
-      // this.scale.set(0,0,0.5);
+      this.roverModel.scale.set(1.5, 2, 1.5);
       scene.add(this.roverModel);
     });
-
-    // Load pot
-    // loader.load("pot.glb", (gltf) => {
-    //   const pot = gltf.scene;
-    //   pot.position.set(0, 0, 2);
-    //   pot.scale.set(0.5, 0.5, 0.5);
-    //   scene.add(pot);
-    // });
 
     // Load and position 10 pots
     loader.load("pot.glb", (gltf) => {
@@ -79,8 +74,11 @@ class ThreeScene extends Component {
         pot.position.set(0, 0, position);
         
         // Rotate pot 90 degrees around Y-axis
-        pot.rotation.y = Math.PI / 2 ; // 90 degrees + angle to face outward
+        pot.rotation.y = Math.PI / 2; // 90 degrees + angle to face outward
         
+        // Add pot to the pots array and the scene
+        pot.userData = { index: i }; // Store the pot's index for identification
+        this.pots.push(pot);
         scene.add(pot);
       }
     });
@@ -111,6 +109,7 @@ class ThreeScene extends Component {
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('keydown', this.onKeyDown, false);
     window.addEventListener('keyup', this.onKeyUp, false);
+    window.addEventListener('click', this.onMouseClick, false);
   }
 
   onWindowResize = () => {
@@ -139,10 +138,37 @@ class ThreeScene extends Component {
     }
   }
 
+  onMouseClick = (event) => {
+    // Calculate mouse position in normalized device coordinates
+    this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // Update the picking ray with the camera and mouse position
+    this.raycaster.setFromCamera(this.mouse, this.camera);
+
+    // Calculate objects intersecting the picking ray
+    const intersects = this.raycaster.intersectObjects(this.pots, true);
+
+    if (intersects.length > 0) {
+      // Get the first intersected object
+      const object = intersects[0].object;
+      // Traverse up to find the root pot object
+      let potObject = object;
+      while (potObject.parent && !potObject.userData.hasOwnProperty('index')) {
+        potObject = potObject.parent;
+      }
+      if (potObject.userData.hasOwnProperty('index')) {
+        console.log(`Pot ${potObject.userData.index} clicked!`);
+        alert(`${potObject.userData.index} is clicked`)
+      }
+    }
+  }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.onWindowResize);
     window.removeEventListener('keydown', this.onKeyDown);
     window.removeEventListener('keyup', this.onKeyUp);
+    window.removeEventListener('click', this.onMouseClick);
   }
 
   render() {
@@ -154,4 +180,4 @@ class ThreeScene extends Component {
   }
 }
 
-export default ThreeScene;
+export default ThreeRoverScene;

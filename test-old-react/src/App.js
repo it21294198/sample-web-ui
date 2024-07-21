@@ -2,8 +2,11 @@ import './App.scss';
 import './styles/test.scss'
 import NavBar from './components/navBar';
 import SearchBar from './components/searchBar';
+import ManiBar from './components/internNavBar/maniBar';
+import ExampleDev from './components/insideDev/exampleDev';
 // import {Buttons} from'./components/buttons'
-// import Three from './components/threeScene'
+import ThreePotScene from './components/threePotScene'
+// import ThreeRoverScene from './components/threeRoverScene'
 
 function App() {
 
@@ -12,7 +15,13 @@ function App() {
       <header>
         <SearchBar />
         <NavBar />
+        <ManiBar />
       </header>
+      <main>
+        {/* <ExampleDev /> */}
+        <ThreePotScene />
+        {/* <ThreeRoverScene /> */}
+      </main>
       {/* <h1 className='h11'>Hello</h1>
       <div className='mainDiv'>
         <div className='subDiv'>1</div>
@@ -22,7 +31,6 @@ function App() {
         <div className='subDiv'>5</div>
       </div>
       <Buttons /> */}
-      {/* <Three /> */}
     </div>
   );
 }

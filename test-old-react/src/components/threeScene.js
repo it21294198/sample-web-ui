@@ -23,13 +23,13 @@ class ThreeScene extends Component {
     scene.background = new THREE.Color(0x808080);
 
     const galaxyPosition = {
-      x: 5,
-      y: 1,
+      x: 0,
+      y: 3,
       z: 10,
     };
 
     this.camera = new THREE.PerspectiveCamera(
-      45,
+      50,
       window.innerWidth / window.innerHeight,
       0.1,
       1000

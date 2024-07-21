@@ -13,9 +13,11 @@
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
     "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
     "redux": "^5.0.1",
     "sass": "^1.77.8",
     "three": "^0.166.1",
+    "three-orbitcontrols": "^2.110.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

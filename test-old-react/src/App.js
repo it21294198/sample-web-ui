@@ -3,10 +3,12 @@ import './styles/test.scss'
 import NavBar from './components/navBar';
 import SearchBar from './components/searchBar';
 import ManiBar from './components/internNavBar/maniBar';
-import ExampleDev from './components/insideDev/exampleDev';
+// import ExampleDev from './components/insideDev/exampleDev';
 // import {Buttons} from'./components/buttons'
-import ThreePotScene from './components/threePotScene'
+// import ThreePotScene from './components/threePotScene'
 // import ThreeRoverScene from './components/threeRoverScene'
+// import AutoSlideShow from './components/autoSlideShow'
+import ManualSlideShow from './components/manualSlideShow'
 
 function App() {
 
@@ -19,8 +21,10 @@ function App() {
       </header>
       <main>
         {/* <ExampleDev /> */}
-        <ThreePotScene />
+        {/* <ThreePotScene /> */}
         {/* <ThreeRoverScene /> */}
+        {/* <AutoSlideShow /> */}
+        <ManualSlideShow />
       </main>
       {/* <h1 className='h11'>Hello</h1>
       <div className='mainDiv'>

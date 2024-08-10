@@ -55,16 +55,21 @@ class ThreePotScene extends Component {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, 5, 5);
-    scene.add(directionalLight);
+    const directionalLight1 = new THREE.DirectionalLight(0xffffff,5);
+    directionalLight1.position.set(5, 5, 5);
+    scene.add(directionalLight1);
+
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff,5);
+    directionalLight2.position.set(-10, -10, -10);
+    scene.add(directionalLight2);
 
     const loader = new GLTFLoader();
 
-    loader.load("rover.glb", (gltf) => {
+    loader.load("new_rover1.glb", (gltf) => {
       this.roverModel = gltf.scene;
-      this.roverModel.position.set(0, 0, 0);
-      this.roverModel.scale.set(1.5, 2, 1.5);
+      this.roverModel.position.set(0, -0.1, 0);
+      // this.roverModel.scale.set(1.5, 2, 1.5);
+      this.roverModel.scale.set(0.5, 0.5, 0.5);
       scene.add(this.roverModel);
     });
 

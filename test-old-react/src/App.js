@@ -1,26 +1,34 @@
 import './App.scss';
 import './styles/test.scss'
-import NavBar from './components/navBar';
-import SearchBar from './components/searchBar';
-import ManiBar from './components/internNavBar/maniBar';
-import ExampleDev from './components/insideDev/exampleDev';
+// import NavBar from './components/navBar';
+// import SearchBar from './components/searchBar';
+// import ManiBar from './components/internNavBar/maniBar';
+// import ShopByCategoriesV2 from './components/shopByCategories/shopByCategories';
+// import ExampleDev from './components/insideDev/exampleDev';
 // import {Buttons} from'./components/buttons'
 import ThreePotScene from './components/threePotScene'
 // import ThreeRoverScene from './components/threeRoverScene'
+// import AutoSlideShow from './components/autoSlideShow'
+// import ManualSlideShow from './components/manualSlideShow'
+import TitleBar from './components/titleBar'
 
 function App() {
 
   return (
     <div>
       <header>
-        <SearchBar />
-        <NavBar />
-        <ManiBar />
+        {/* <SearchBar /> */}
+        {/* <NavBar /> */}
+        {/* <ManiBar /> */}
+        <TitleBar />
       </header>
       <main>
         {/* <ExampleDev /> */}
         <ThreePotScene />
         {/* <ThreeRoverScene /> */}
+        {/* <AutoSlideShow /> */}
+        {/* <ManualSlideShow /> */}
+        {/* <ShopByCategoriesV2 /> */}
       </main>
       {/* <h1 className='h11'>Hello</h1>
       <div className='mainDiv'>

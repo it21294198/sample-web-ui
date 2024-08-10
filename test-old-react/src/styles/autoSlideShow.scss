@@ -1,0 +1,54 @@
+$mobileLargeScreen: 375px;
+
+.freshFarm-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $mobileLargeScreen) {
+      // Additional styles for mobile large screen can be added here
+    }
+}
+
+.freshFarm-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; // For Firefox
+  -ms-overflow-style: none; // For Internet Explorer and Edge
+
+  @media screen and (max-width: $mobileLargeScreen) {
+    flex-wrap: nowrap;
+  }
+
+  // For WebKit browsers (Chrome, Safari)
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:hover {
+    scrollbar-width: thin;
+    -ms-overflow-style: auto;
+    &::-webkit-scrollbar {
+      display: block;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888; 
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+  }
+}
+
+.freshFarm-img {
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  scroll-snap-align: start;
+
+  &:hover {
+    border: solid 1px #64BF47;
+  }
+}

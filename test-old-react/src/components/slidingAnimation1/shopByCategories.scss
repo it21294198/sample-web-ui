@@ -1,0 +1,76 @@
+@import '../../../src/styles/defaultTheme.scss';
+
+.shopByCat-main-2 {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-shopByCat-container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.mobile-shopByCat-grid-wrapper-2 {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.mobile-shopByCat-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-shopByCat-nav-btn-2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  z-index: 1;
+
+  &--left {
+    left: 1rem;
+  }
+
+  &--right {
+    right: 1rem;
+  }
+}
+
+.shopByCat-item-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-shopByCat-img-2 {
+  width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.shopByCat-title-2 {
+  font-size: 1.2rem;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.mobile-shopByCat-grid.swiping-left-2 {
+  transform: translateX(-100%);
+}
+
+.mobile-shopByCat-grid.swiping-right-2 {
+  transform: translateX(100%);
+}

@@ -1,0 +1,43 @@
+.slider-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.3s ease-out;
+    }
+  
+    .slide-group {
+      display: flex;
+      flex-shrink: 0;
+      width: 100%;
+    }
+  
+    .slide {
+      flex-shrink: 0;
+      padding: 0 5px;
+  
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+    .slider-controls {
+      margin-top: 10px;
+      text-align: center;
+  
+      button {
+        margin: 0 5px;
+      }
+    }
+  
+    .current-group {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  

@@ -12,6 +12,7 @@ import ThreePotScene from './components/threePotScene'
 // import AutoSlideShow from './components/autoSlideShow'
 import ManualSlideShow from './components/manualSlideShow'
 import TitleBar from './components/titleBar'
+import SliderAnimation2 from './components/sliderAnimation2/sliderAnimation2'
 import Error from './components/error'
 import {
   createBrowserRouter,
@@ -20,6 +21,18 @@ import {
 import Home from './routes/Home';
 
 function App() {
+
+  const slides = [
+    { id: 1, imageUrl: 'https://placehold.co/600x400?text=Slide+1' },
+    { id: 2, imageUrl: 'https://placehold.co/600x400?text=Slide+2' },
+    { id: 3, imageUrl: 'https://placehold.co/600x400?text=Slide+3' },
+    { id: 4, imageUrl: 'https://placehold.co/600x400?text=Slide+4' },
+    { id: 5, imageUrl: 'https://placehold.co/600x400?text=Slide+5' },
+    { id: 6, imageUrl: 'https://placehold.co/600x400?text=Slide+6' },
+    { id: 7, imageUrl: 'https://placehold.co/600x400?text=Slide+7' },
+    // { id: 8, imageUrl: 'https://placehold.co/600x400?text=Slide+8' },
+    // { id: 9, imageUrl: 'https://placehold.co/600x400?text=Slide+9' },
+  ];
 
   const router = createBrowserRouter([
     {
@@ -42,7 +55,10 @@ function App() {
     {
       path: "/test",
       element: 
-        <ShopByCategoriesV2 />
+      <>
+        <ShopByCategoriesV2 slides={slides} rowCount={3} columnCount={2}/>
+        <SliderAnimation2 slides={slides} showcount={4} />
+      </>
       ,
       errorElement:<Error/>
     }
